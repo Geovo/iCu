@@ -1,0 +1,17 @@
+===============================================================================================
+		README
+===============================================================================================
+Hey, this is just my learning material. I started to learn C a few weeks ago and am currently working
+with Dennis Ritchie's Book "The C Programming Language", which I call "The Bible of 'C'".
+That's why there is a "jizuz" folder, because that's kinda the role Dennis Ritchie played in the life of 'C'.
+There is also a nooby folder, where I just store all my noobish (for now) code. To learn 'C' you have to write 'C' and think 'C'.
+The test folder contains a small ruby app, that generates a tree of folders and files. I'll improve it a bit later and then will probably make a gem out of it. 
+There is 1 dependecy: "colorize" gem.
+In the folder "the_hard_way" I store my code that I write with Zed Shaw's Book "Learn C the Hard Way". 
+There's some badass code there :)
+
+===========================================================================================================
+Feel free to use it, but I created this repo for convenience, as I work on 2-3 different computers daily and this way I'llhave more flexibility.
+
+Thanks for reading!
+Have a nice day :)
