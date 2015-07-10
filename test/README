@@ -1,0 +1,402 @@
+===================================	README	===================================
+Hey there, I built this little tweak to create a folder layout if you are learning some new subject with a lot ofchapters and sections. Feel free to change it. The present layout was built for Dennis M. Richie's book: "The C Programming language".
+======================================================================
+It was designed to have chapters folders and sections for each chapter, where you can write all the sample code provided in the book, as well as an exercise folder for each chapter. Steps you need to do:
+1. Run './prepare.rb'
+2. Then check out your tree. It will look like this:
+jizuz
+├── ch1
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section7
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section8
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section9
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+├── ch2
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section10
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section11
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section7
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section8
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section9
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+├── ch3
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section7
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+├── ch4
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section10
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section7
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section8
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section9
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+├── ch5
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section10
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section11
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section7
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section8
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section9
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+├── ch6
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section7
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section8
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+├── ch7
+│   ├── exercises
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section1
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section2
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section3
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section4
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section5
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   ├── section6
+│   │   ├── check.rb
+│   │   ├── DONE
+│   │   ├── setup.rb
+│   │   └── UNDONE
+│   └── section7
+│       ├── check.rb
+│       ├── DONE
+│       ├── setup.rb
+│       └── UNDONE
+└── ch8
+    ├── exercises
+    │   ├── check.rb
+    │   ├── DONE
+    │   ├── setup.rb
+    │   └── UNDONE
+    ├── section1
+    │   ├── check.rb
+    │   ├── DONE
+    │   ├── setup.rb
+    │   └── UNDONE
+    ├── section2
+    │   ├── check.rb
+    │   ├── DONE
+    │   ├── setup.rb
+    │   └── UNDONE
+    ├── section3
+    │   ├── check.rb
+    │   ├── DONE
+    │   ├── setup.rb
+    │   └── UNDONE
+    ├── section4
+    │   ├── check.rb
+    │   ├── DONE
+    │   ├── setup.rb
+    │   └── UNDONE
+    ├── section5
+    │   ├── check.rb
+    │   ├── DONE
+    │   ├── setup.rb
+    │   └── UNDONE
+    └── section6
+        ├── check.rb
+        ├── DONE
+        ├── setup.rb
+        └── UNDONE
+
+85 directories, 308 files
