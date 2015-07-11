@@ -1,1 +1,1 @@
-require '/Users/pentahack/shareUNIXs/iCu/test/copyfile.rb'
+require '/home/fdrmdd/Documents/iCu/test/copyfile.rb'
