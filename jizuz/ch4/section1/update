@@ -2,4 +2,4 @@
 
 ARGV1=$1
 echo "call rb with $ARGV1"
-./.up.rb $ARGV1
+ruby check.rb $ARGV1

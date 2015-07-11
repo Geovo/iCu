@@ -106,4 +106,4 @@ class ProgressChecker
 
 end
 
-
+prog = ProgressChecker.new

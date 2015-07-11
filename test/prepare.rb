@@ -37,7 +37,7 @@ class Layout
   end
   
   def dump_home
-    f = File.open("setup.rb", "r+")
+    f = File.open(".home.rb", "w")
     f.puts "require '#{@home}/copyfile.rb'"
     f.close
   end
@@ -53,7 +53,6 @@ class Layout
     Dir.mkdir("exercises")
     Dir.chdir("exercises")
      @fold.each {|k, v| File.copy(v, k)}
-     dump_home
     Dir.chdir("..")
   end
 
@@ -65,6 +64,7 @@ class Layout
     Dir.chdir(k) #program is now in e.g. ch1
     # now we create an 'exercise' folder
     ex_fold 
+    dump_home
     # create a respective amount of section folders
     i = 1
     while i < v do 
@@ -72,11 +72,9 @@ class Layout
       Dir.chdir("section#{i}")
 	# here it is in e.g. section1 folder
       @files.each {|k, v| File.copy(v, k)}  
-      dump_home # insert the home path
       Dir.chdir("..")# go back to ch1 folder 
       i += 1
     end # end of while loop
-    
       #!!!!!!!!Get out of ch1 folder
       Dir.chdir(@home)
     end # finish the '@hash.each' loop 
