@@ -1,4 +1,4 @@
-require "./.home.rb"
+require "../.home.rb"
 require "./check.rb"
 require "colorize"
 str = ""
