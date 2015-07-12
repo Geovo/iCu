@@ -1,25 +1,21 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED 
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
-
-
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
-
+// Print Fahrenheit-Celsius
+// for 0, 20, ..., 300 degrees, BUT!!! Reversed
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
+	float fahr, celsius;
 
+	for (fahr = 300; fahr >= 0; fahr -= 20) {
+		celsius = (5.0/9.0) * (fahr-32.0);
+		printf("%3.0f %6.1f\n", fahr, celsius);
+	}
 
         return 0;
 }
+
 

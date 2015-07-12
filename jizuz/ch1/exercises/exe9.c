@@ -1,24 +1,20 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
-
-
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
+// Let us copy input to output and replace spaces with a single space
 
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
+	int c;
 
+	while ((c = getchar()) != EOF)
+		if (c == ' ')
+			printf(" \n");
+		else
+			printf("%c\n", c);
 
         return 0;
 }

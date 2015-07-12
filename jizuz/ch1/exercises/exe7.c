@@ -1,24 +1,15 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
-
-
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
+// Let's see how EOF really looks
 
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
-
+	int showem = EOF;
+	printf("\nThis is how EOF looks: %i\nYou didn't expect this!\n\n", showem);
 
         return 0;
 }

@@ -1,24 +1,14 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED 
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
+// actually already done 
 
-
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
-
-int main(int argc, char *argv[])
+int main()
 {
         // awesome code goes here:
-
+	printf("Hello world!\n");
 
         return 0;
 }

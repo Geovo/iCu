@@ -1,25 +1,19 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
+// let's break it
 
-
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
-
-int main(int argc, char *argv[])
+int main()
 {
         // awesome code goes here:
-
+	printf("Hello world!\c");
 
         return 0;
 }
+
+// This is what the compiler told me:
+//exe2.c:11:22: warning: unknown escape sequence '\c' [-Wunknown-escape-sequence]
+  //      printf("Hello world!\c");
 
