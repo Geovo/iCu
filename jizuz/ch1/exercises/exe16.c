@@ -1,25 +1,55 @@
 #include <stdio.h>
+#define MAXLINE 1000 // Maximum input line size
 
+// /|\PROGRESS: FINISHED
 
-// /|\PROGRESS: UNDONE
-
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
-
-
-// check out this template
-// some functions go here:
-
-
+int getlino(char line[], int maxline);
+void copy(char to[], char from[]);
 
 // here goes the main function
 
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
-
+	int len, max;
+	char line[MAXLINE];
+	char longest[MAXLINE];
+	
+	max = 0;
+	while ((len = getlino(line, MAXLINE)) > 0)
+		if (len > max) {
+			max = len;
+			copy(longest, line);
+		}
+	if (max > 0) 	// There was a line
+		printf("%s", longest);
 
         return 0;
 }
 
+// getlino, read a line into s, return length
+int getlino(char s[], int lim)
+{
+	int c, i;
+	
+	for (i=0; i < lim-1 && (c = getchar()) != EOF && c!='\n'; ++i)
+		s[i] = c;
+	if (c == '\n') {
+		s[i] = c;
+		i++;
+	}
+	s[i] = '\0';
+	return i;
+}
+
+
+// copy from into 'to'
+
+void copy(char to[], char from[])
+{
+	int i;
+
+	i = 0;
+	while ((to[i] = from[i]) != '\0')
+		++i;
+}

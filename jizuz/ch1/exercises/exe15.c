@@ -1,24 +1,23 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
+void temp()
+{
+	float fahr, celsius;
 
+	for (fahr = 0; fahr <= 300; fahr+=20){
+		celsius = (5.0/9.0) * (fahr-32.0);
+		printf("%3.0f %6.1f\n", celsius, fahr);
+	}
+}
 
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
 
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
-
+	temp();
 
         return 0;
 }
