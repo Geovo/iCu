@@ -2,118 +2,213 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <time.h>
+#include "ex19.h"
 
-/** Our old friend die from ex17. */
-void die(const char *message)
+
+int Monster_attack(void *self, int damage)
 {
-	if(errno) {
-	    perror(message);
-	} else {
-		printf("ERROR: %s\n", message);
-	}
+    Monster *monster = self;
 
-	exit(1);
+    printf("You attack %s!\n", monster->_(description));
+
+    monster->hit_points -= damage;
+
+    if(monster->hit_points > 0) {
+        printf("It is still alive.\n");
+        return 0;
+    } else {
+        printf("It is dead!\n");
+        return 1;
+    }
 }
 
-// a typedef creates a fake type, in this
-// case for a function pointer
-typedef int (*compare_cb)(int a, int b);
-
-/**
- * A classic bubble sort function that uses the 
- * compare_cb to do the sorting.
- */
-int *bubble_sort(int *numbers, int count, compare_cb cmp)
+int Monster_init(void *self)
 {
-	int temp = 0;
-	int i = 0;
-	int j = 0;
-	int *target = malloc(count *sizeof(int));
-	
-	if(!target) die("Memory error.");
-	
-	memcpy(target, numbers, count * sizeof(int));
-	
-	for(i = 0; i < count; i++) {
-		for(j = 0; j < count - 1; j++) {
-			if(cmp(target[j], target[i]) > 0) {
-				temp = target[j+1[;
-				target[j+1] = target[j];
-				target[j] = temp;
-			}
-		}
-	}
-	
-	return target;
+    Monster *monster = self;
+    monster->hit_points = 10;
+    return 1;
 }
 
-int sorted_order(int a, int b)
+Object MonsterProto = {
+    .init = Monster_init,
+    .attack = Monster_attack
+};
+
+void *Room_move(void *self, Direction direction)
 {
-	return a - b;
+    Room *room = self;
+    Room *next = NULL;
+
+    if(direction == NORTH && room->north) {
+        printf("You go north, into:\n");
+        next = room->north;
+    } else if(direction == SOUTH && room->south) {
+        printf("You go to south, into:\n");
+        next = room->south;
+    } else if(direction == EAST && room->east) {
+        printf("You go to east, into:\n");
+        next = room->east;
+    } else if(direction == WEST && room->west) {
+        printf("You go to west, into:\n");
+        next = room->west;
+    } else {
+        printf("You can't go that direction.");
+        next = NULL;
+    }
+
+    if(next) {
+        next->_(describe)(next);
+    }
+
+    return next;
 }
 
-int reverse_order(int a, int b)
+
+int Room_attack(void *self, int damage)
 {
-	return b - a;
+    Room *room = self;
+    Monster *monster = room->bad_guy;
+
+    if(monster) {
+        monster->_(attack)(monster, damage);
+        return 1;
+    } else {
+        printf("You flail in the air at nothing. Idiot.\n");
+        return 0;
+    }
 }
 
-int strange_order(int a, int b)
+
+Object RoomProto  = {
+    .move = Room_move,
+    .attack = Room_attack
+};
+
+
+void *Map_move(void *self, Direction direction)
 {
-	if(a == 0 || b == 0) {
-		return 0;
-	} else {
-		return a % b;
-	}
+    Map *map = self;
+    Room *location = map->location;
+    Room *next = NULL;
+
+    next = location->_(move)(location, direction);
+
+    if(next) {
+        map->location = next;
+    }
+
+    return next;
 }
 
-/**
- * Used to test that we are sorting things correctly
- * by doing the sort and printing it out.
- */
-void test_sorting(int *numbers, int count, compare_cb cmp)
+int Map_attack(void *self, int damage)
 {
-	int i = 0;
-	int *sorted = bubble_sort(numbers, count, cmp);
-	
-	if(!sorted) die("Failed to sort as requested.");
-	
-	for(i = 0; i < count; i++) {
-		printf("%d ", sorted[i]);
-	}
-	printf("\n");
-	
-	free(sorted);
+    Map *map = self;
+    Room *location = map->location;
+
+    return location->_(attack)(location, damage);
+}
+
+
+int Map_init(void *self)
+{
+    Map *map = self;
+
+    // make some more rooms for a small map
+    Room *hall = NEW(Room, "The great Hall");
+    Room *throne = NEW(Room, "The throne room");
+    Room *arena = NEW(Room, "The arena, with the minotaur");
+    Room *kitchen = NEW(Room, "Kitchen, you have the knife now");
+
+    // put the bad guy in the arena
+    arena->bad_guy = NEW(Monster, "The evil minotaur");
+
+    // setup the map rooms
+    hall->north = throne;
+
+    throne->west = arena;
+    throne->east = kitchen;
+    throne->south = hall;
+
+    arena->east = throne;
+    kitchen->west = throne;
+
+    // start the map and the character off in the hall
+    map->start = hall;
+    map->location = hall;
+
+    return 1;
+}
+
+Object MapProto = {
+    .init = Map_init,
+    .move = Map_move,
+    .attack = Map_attack
+};
+
+int process_input(Map *game)
+{
+    printf("\n> ");
+
+    char ch = getchar();
+    getchar(); // eat ENTER
+
+    int damage = rand() % 4;
+
+    switch(ch) {
+        case -1:
+            printf("Giving up? You suck.\n");
+            return 0;
+            break;
+
+        case 'n':
+            game->_(move)(game, NORTH);
+            break;
+
+        case 's':
+            game->_(move)(game, SOUTH);
+            break;
+
+        case 'e':
+            game->_(move)(game, EAST);
+            break;
+
+        case 'w':
+            game->_(move)(game, WEST);
+            break;
+
+        case 'a':
+
+            game->_(attack)(game, damage);
+            break;
+        case 'l':
+            printf("You can go:\n");
+            if(game->location->north) printf("NORTH\n");
+            if(game->location->south) printf("SOUTH\n");
+            if(game->location->east) printf("EAST\n");
+            if(game->location->west) printf("WEST\n");
+            break;
+
+        default:
+            printf("What?: %d\n", ch);
+    }
+
+    return 1;
 }
 
 int main(int argc, char *argv[])
 {
-	if(argc < 2) die("USAGE: ex18 4 3 1 5 6");
-	
-	int count = argc - 1;
-	int i = 0;
-	char **inputs = argv + 1;
-	
-	int *numbers = malloc(count * sizeof(int));
-	if(!numbers) die("Memory error.");
-	
-	for(i = 0; i < count; i++) {
-		numbers[i] = atoi(inputs[i]);
-	}
-	
-	test_sorting(numbers, count, sorted_order);
-	test_sorting(numbers, count, reverse_order);
-	test_sorting(numbers, count, strange_order);
-	
-	free(numbers);
-	
-	return 0;
+    // simple way to setup the randomness
+    srand(time(NULL));
+
+    // make our map to work with
+    Map *game = NEW(Map, "The Hall of the Minotaur.");
+
+    printf("You enter the ");
+    game->location->_(describe)(game->location);
+
+    while (process_input(game)) {
+    }
+
+    return 0;
 }
-
-
-
-
-
-
-
-
-
