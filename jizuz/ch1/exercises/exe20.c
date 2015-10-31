@@ -7,9 +7,10 @@
 
 int main(int argc, char *argv[])
 {
-        // awesome code goes here:
+    // awesome code goes here:
+    int c;
 
+    
 
-        return 0;
+    return 0;
 }
-
