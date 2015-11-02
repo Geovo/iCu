@@ -6,7 +6,7 @@ unsigned getbits(unsigned x, int p, int n)
        First, we take the first num and shift it to the right end
        Then, we get a series of 1's which results in a negative number -- ~0 << n --
        And then this number is one complemented
-       In the end, we OR the both numbers */
+       In the end, we AND the both numbers */
     return (x >> (p+1-n)) & ~(~0 << n);
 }
 
