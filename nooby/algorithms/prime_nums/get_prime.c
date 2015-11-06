@@ -25,12 +25,12 @@ int my_prime(int n) {
 
 int main() {
 	int i;
-//	int test[] = {4,9,10,15,11,13513,1234,1122,99,97};
+	int test[] = {4,9,10,15,11,13513,1234,1122,99,97};
 
 	my_prime(123);
-//	for (i = 0; i < 10; i++)
-//		printf("%i is%sa prime\n", test[i], my_prime(i) == 1 ? " " : " not "); 
-		printf("%i is%sa prime\n", 15, my_prime(15) == 1 ? " " : " not ");
+	for (i = 0; i < 10; i++)
+		printf("%i is%sa prime\n", test[i], my_prime(test[i]) == 1 ? " " : " not "); 
+		printf("%i is%sa prime\n", 10, my_prime(10) == 1 ? " " : " not ");
 
 	return 0;
 }
