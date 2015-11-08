@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ruby status_update.rb

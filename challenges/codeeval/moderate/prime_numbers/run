@@ -1,0 +1,1 @@
+make prime_numbers && ./prime_numbers prime_numbers.txt
