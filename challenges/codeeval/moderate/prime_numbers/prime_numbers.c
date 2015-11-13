@@ -3,6 +3,8 @@
  * and code the Cit out of the challenge!!! :D
  */
 
+//|\ STATUS: FINISHED
+
 #include <stdio.h>
 
 void my_prime(int n) {

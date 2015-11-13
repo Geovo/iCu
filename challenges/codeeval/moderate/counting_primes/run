@@ -1,0 +1,1 @@
+make counting_primes && ./counting_primes counting_primes.txt
