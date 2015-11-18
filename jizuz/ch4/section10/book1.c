@@ -1,18 +1,25 @@
 #include <stdio.h>
-#define swap(x, y) (z = x; x = y; y = z;)
+
 
 // /|\PROGRESS: UNDONE
+
+// remove these headers if not using
+#include <stdlib.h>
+#include <string.h>
+
+
+// check out this template
+// some functions go here:
 
 
 
 // here goes the main function
+
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
-    int a = 5;
-    int b = 10;
-    swap(a, b);
-    printf("A: %i\tB: %i\n", a, b);
+
 
         return 0;
 }
+

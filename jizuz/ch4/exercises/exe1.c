@@ -3,17 +3,19 @@
 
 // /|\PROGRESS: UNDONE
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
+double atof(char s[]) {
+    // convert string to double and handle scientific notation
+    double val, power;
+    int i, sign;
 
+    for (i = 0; s[i] == ' ' || s[i] == '\n' || s[i] == '\t'; i++)
+        ; // skip white space
 
-// check out this template
-// some functions go here:
-
-
-
-// here goes the main function
+    sign = 1;
+    if (s[i] == '+' || s[i] == '-') // handle the sign
+        sign = (s[i++] == '+') ? 1 : -1;
+    //for (val = 0; s[i] = )
+}
 
 int main(int argc, char *argv[])
 {
@@ -22,4 +24,3 @@ int main(int argc, char *argv[])
 
         return 0;
 }
-
