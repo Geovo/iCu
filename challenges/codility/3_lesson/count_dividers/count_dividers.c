@@ -32,6 +32,15 @@ int solution2(int A, int B, int K) {
     return count;
 }
 
+int solution3(int A, int B, int K) {
+    // write your code in C99
+    if (B <= A)
+        return B / K;
+//    int c = B - A;
+    B = ((B - A) / K) + 1;
+    return c % 2 == 0 ? B + 1 : B;
+}
+
 #include <stdio.h>
 int main(int argc, const char * argv[]) {
     int sol = solution2(0, 2000000000, 123);

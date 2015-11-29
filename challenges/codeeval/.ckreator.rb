@@ -23,7 +23,7 @@ print "Uploading files:  ".green
 `cp .template/solution.c #{code}`
 `cp .template/test.txt #{txt} && touch #{difficulty}/#{nu}/NOT_DONE`
 #`touch ./#{nu}/run`
-`echo "make #{nu} && ./#{nu}" > #{difficulty}/#{nu}/run`  
+`echo "make #{nu} && ./#{nu} #{nu}.txt" > #{difficulty}/#{nu}/run`  
 `chmod +x #{difficulty}/#{nu}/run`
 
 #append the files to .gitignore

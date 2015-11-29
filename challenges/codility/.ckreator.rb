@@ -13,6 +13,8 @@ end
 
 public :stop_it
 
+stop_it if !ARGV[0] || !ARGV[1]
+
 puts "#{difficulty}_lesson/#{nu}"
 stop_it if File.exist?("#{difficulty}_lesson/#{nu}")
 

@@ -1,0 +1,1 @@
+make ugly_numbers && ./ugly_numbers ugly_numbers.txt

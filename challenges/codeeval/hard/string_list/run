@@ -1,0 +1,1 @@
+make string_list && ./string_list string_list.txt

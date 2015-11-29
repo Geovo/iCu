@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-
+/*
+ *
+ *
+ * I DID NOT WRITE THE WHOLE CODE FROM THE BOOK
+ * SO THAT I WILL PROBABLY SKIP THIS ONE (FOR NOW)
+ *
+ *
+ */
 // /|\PROGRESS: UNDONE
 
 // remove these headers if not using
@@ -22,4 +29,3 @@ int main(int argc, char *argv[])
 
         return 0;
 }
-

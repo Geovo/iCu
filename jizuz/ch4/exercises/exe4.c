@@ -1,20 +1,26 @@
 #include <stdio.h>
 
 
-// /|\PROGRESS: UNDONE
+// /|\PROGRESS: FINISHED
 
-// remove these headers if not using
-#include <stdlib.h>
-#include <string.h>
+/*
+ * This one is easy
+ * We just use one single char as buffer instead of a stack
+ */
 
+char buf;
 
-// check out this template
-// some functions go here:
+char getch() {
+    char temp;
+    temp = buf == 0 ? getchar() : buf;
+    buf = 0;
+    return temp;
+}
 
-
-
-// here goes the main function
-
+void ungetch(int c) {
+    // this one is very simple :)
+    buf = c;
+}
 int main(int argc, char *argv[])
 {
         // awesome code goes here:
@@ -22,4 +28,3 @@ int main(int argc, char *argv[])
 
         return 0;
 }
-

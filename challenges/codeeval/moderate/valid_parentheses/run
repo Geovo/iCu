@@ -1,0 +1,1 @@
+make valid_parentheses && ./valid_parentheses valid_parentheses.txt

@@ -5,7 +5,8 @@ require 'colorize'
 # Here it goes:
 
 # This has meaning only on my computer
-levels = ['easy', 'moderate', 'hard']
+levels = []
+(1..15).each {|x| s = x.to_s + "_lesson"; levels << s}
 directories = []
 levels.map {|l| directories << (Dir.entries(l) - [".DS_Store", ".", '..', '.status.rb.swp', 'update', '.status.rb']).map {|x| File.expand_path(x, l)}}
 directories.flatten!

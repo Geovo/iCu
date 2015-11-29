@@ -1,0 +1,1 @@
+make sum_of_integers && ./sum_of_integers sum_of_integers.txt

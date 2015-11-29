@@ -1,0 +1,1 @@
+make palindromic_ranges && ./palindromic_ranges palindromic_ranges.txt

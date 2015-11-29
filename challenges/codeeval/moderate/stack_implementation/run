@@ -1,0 +1,1 @@
+make stack_implementation && ./stack_implementation stack_implementation.txt
