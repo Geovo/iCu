@@ -1,0 +1,1 @@
+make flavius_josephus && ./flavius_josephus flavius_josephus.txt
