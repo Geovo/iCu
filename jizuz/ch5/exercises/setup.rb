@@ -17,15 +17,15 @@ inp = gets.chomp
 inp = inp.split(" ")
 type = ""
 print "Creating #{inp[0]} templates of type ==> "
-if (inp[0] =~ /[0-9]*/) && (inp[1] =~ /[a-z]*/) 
+if (inp[0] =~ /[0-9]*/) && (inp[1] =~ /[a-z]*/)
   t = inp[0].to_i
-  type = inp[1] 
+  type = inp[1]
   if type =~ /ex/
     type = "exe"
   elsif type =~ /b/
     type = "book"
   end
-  t.times {|i| File.copy(".code", "#{type}#{i}.c")}
+  t.times {|i| File.copy(".code", "#{type}#{i+1}.c")}
 end
 print type, "\n"
 puts "Creating timestamp...".green
@@ -35,7 +35,7 @@ puts "=" *80, "Working well so far...".green
 puts "Fixing the details".yellow
 `chmod +x update .up.rb`
 typus = File.open(".ch", "w")
-typus.puts 1 
+typus.puts 1
 typus.close
 end
 puts "Done...".green
