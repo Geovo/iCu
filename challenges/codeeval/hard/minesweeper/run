@@ -1,0 +1,1 @@
+make minesweeper && ./minesweeper minesweeper.txt

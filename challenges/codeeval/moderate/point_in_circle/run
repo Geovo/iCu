@@ -1,0 +1,1 @@
+make point_in_circle && ./point_in_circle point_in_circle.txt

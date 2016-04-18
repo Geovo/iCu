@@ -1,0 +1,1 @@
+make string_search_wildcard && ./string_search_wildcard

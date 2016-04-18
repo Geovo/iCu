@@ -1,0 +1,1 @@
+make rightmost_char && ./rightmost_char rightmost_char.txt

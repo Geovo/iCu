@@ -1,0 +1,1 @@
+make minimum_coins && ./minimum_coins minimum_coins.txt

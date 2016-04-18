@@ -1,0 +1,1 @@
+make reverse_and_add && ./reverse_and_add reverse_and_add.txt

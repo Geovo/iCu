@@ -1,0 +1,1 @@
+make spiral_printing && ./spiral_printing spiral_printing.txt

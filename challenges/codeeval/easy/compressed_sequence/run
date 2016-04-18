@@ -1,0 +1,1 @@
+make compressed_sequence && ./compressed_sequence compressed_sequence.txt

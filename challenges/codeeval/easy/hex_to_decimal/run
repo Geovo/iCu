@@ -1,0 +1,1 @@
+make hex_to_decimal && ./hex_to_decimal hex_to_decimal.txt
